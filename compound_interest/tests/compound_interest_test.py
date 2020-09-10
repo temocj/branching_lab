@@ -37,10 +37,21 @@ class CompoundInterestTest(unittest.TestCase):
     # Extention tests
 
     # Should return 118,380.16 given 100 principal, 5 percent, 8 years, 1000 per month
+    def test_with_regular_contribs_a(self):
+        actual = CompoundInterest.calculate(100.00, 5.00, 8, 1000)
+        self.assertEqual(118380.16, actual)
 
     # Should return 156,093.99 given 100 principal, 5 percent, 10 years, 1000 per month
+    def test_with_regular_contribs_b(self):
+        actual = CompoundInterest.calculate(100.00, 5.00, 10, 1000)
+        self.assertEqual(156093.99, actual)
 
     # Should return 475,442.59 given 116028.86, 7.5 percent, 8 years, 2006 per month
+    def test_with_regular_contribs_c(self):
+        actual = CompoundInterest.calculate(116028.86, 7.50, 8, 2006)
+        self.assertEqual(475442.59, actual)
 
     # Should return 718,335.96 given 116028.86 principal, 9 percent, 12 years, 1456 per month
-
+    def test_with_regular_contribs_d(self):
+        actual = CompoundInterest.calculate(116028.86, 9.00, 12, 1456)
+        self.assertEqual(718335.96, actual)
