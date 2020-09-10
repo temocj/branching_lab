@@ -1,4 +1,4 @@
-import unittest
+import unittest, pdb
 
 from src.compound_interest import CompoundInterest
 
