@@ -3,7 +3,10 @@ import pdb
 class CompoundInterest:
 
     @staticmethod
-    def calculate(starting_amount, interest_rate, years, monthly_contribution=0):
+    def calculate(
+            starting_amount, interest_rate,
+            years, monthly_contribution=0
+    ):
         P = starting_amount
         r = interest_rate/100.00
         t = years
