@@ -31,7 +31,7 @@ class HighScoresTest(unittest.TestCase):
         self.assertIn(91, actual)
 
     # Test ordered from highest tp lowest
-    def test_personal_top_three(self):
+    def test_personal_top_three__is_ordered(self):
         actual = personal_top_three(self.scores)
         self.assertEqual([99, 92, 91], actual)
 
