@@ -34,13 +34,7 @@ class Matrix:
                 self.data[row].append(int(number))
 
     def row(self, index):
-        row = []
-        for el in self.data[index-1]:
-            row.append(el)
-        return row
+        return self.data[index-1]
 
     def column(self, index):
-        col = []
-        for i in range(0, len(self.data)):
-            col.append(self.data[i][index-1])
-        return col
+        return [el[index-1] for el in self.data]
