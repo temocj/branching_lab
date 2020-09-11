@@ -5,32 +5,11 @@ class Matrix:
         self.data = []
 
         index = 0
-        length = len(matrix_string)
-        row = 0
-        col = 0
-        while index < length:
-            char = matrix_string[index]
-            if char == " ":
-                col += 1
-            elif char == "\n":
-                row += 1
-                col  = 0
-            else:
-                next_space   = matrix_string.find( " ", index)
-                next_newline = matrix_string.find("\n", index)
-                next_space   = next_space   if next_space   != -1 else length
-                next_newline = next_newline if next_newline != -1 else length
-                number_end = min(next_space, next_newline)
-                number = matrix_string[index:number_end]
-                self._commit_number(number, row, col)
-                index += max(0, len(number) - 1)
+        for row in matrix_string.split("\n"):
+            self.data.append([])
+            for number in row.split(" "):
+                self.data[index].append(int(number))
             index += 1
-
-    def _commit_number(self, number, row, col):
-        if row >= len(self.data):
-            self.data.append([int(number)])
-        else:
-            self.data[row].append(int(number))
 
     def row(self, index):
         return self.data[index-1]
