@@ -27,11 +27,10 @@ class Matrix:
             index += 1
 
     def _commit_number(self, number, row, col):
-        if number != "":
-            if row >= len(self.data):
-                self.data.append([int(number)])
-            else:
-                self.data[row].append(int(number))
+        if row >= len(self.data):
+            self.data.append([int(number)])
+        else:
+            self.data[row].append(int(number))
 
     def row(self, index):
         return self.data[index-1]
